@@ -4,7 +4,7 @@ import pandas as pd
 import plotly.figure_factory as ff
 import dash
 import dash_table
-from flask import Flask
+from flask import (Flask, has_request_context)
 import plotly.express as px
 import numpy as np
 import os
@@ -151,7 +151,7 @@ def mainF(file_name):
         style={'text-align': 'center'})
 
     def serve_layout():
-        if flask.has_request_context():
+        if has_request_context():
             return url_bar_and_content_div
         return html.Div([
             url_bar_and_content_div,
