@@ -4,7 +4,7 @@ import pandas as pd
 import plotly.figure_factory as ff
 import dash
 import dash_table
-from flask import Flask
+import Flask
 import plotly.express as px
 import numpy as np
 import os
