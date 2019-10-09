@@ -177,7 +177,8 @@ def mainF(file_name):
 
 
 def parse_contents(contents, filename, date):
-    mainF(filename)
+    return mainF(filename)
+
 #     return html.Div([
 #         html.H5(filename),
 #     ])
