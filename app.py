@@ -178,9 +178,9 @@ def mainF(file_name):
 
 def parse_contents(contents, filename, date):
     mainF(filename)
-    return html.Div([
-        html.H5(filename),
-    ])
+#     return html.Div([
+#         html.H5(filename),
+#     ])
 
 
 @app.callback(Output('output-data-upload', 'children'),
