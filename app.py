@@ -52,6 +52,8 @@ df1 = result
 
 df1 = df1.dropna(subset=['Task', 'Start'])
 df1.reset_index(inplace=True, drop=True)
+print(df1)
+print(result)
 
 fig = ff.create_gantt(df1, group_tasks=True, colors=colors, index_col='Complete', reverse_colors=True,
                       show_colorbar=True)
