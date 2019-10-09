@@ -29,11 +29,24 @@ for i in range(df['FSS1 assigned'].count()):
         df1.loc[i, 'Task'] = df.loc[i, 'FSS1 assigned']
     else:
         df1.loc[i, 'Task'] = df.loc[i, 'FSS1 assigned'] + ' AND ' + df.loc[i, 'FSS2 assigned']
-df1['Task'] = df['FSS1 assigned'] + '___' + df['FSS2 assigned']
+df1['Task'] = df['FSS1 assigned']
 df1['Start'] = df['Expected date']
 df1['Finish'] = df['Finish date']
 df1['Complete'] = df['Customer']
 df1['text'] = df['Job']
+
+df2 = pd.DataFrame()
+df2['Task'] = df['FSS2 assigned']
+df2['Start'] = df['Expected date']
+df2['Finish'] = df['Finish date']
+df2['Complete'] = df['Customer']
+df2['text'] = df['Job']
+
+
+frames = [df1, df2]
+
+result = pd.concat(frames)
+result = result[pd.notnull(result['Task'])]
 
 fig = ff.create_gantt(df1, group_tasks=True, colors=colors, index_col='Complete', reverse_colors=True,
                       show_colorbar=True)
