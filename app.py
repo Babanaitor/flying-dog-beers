@@ -47,6 +47,11 @@ frames = [df1, df2]
 
 result = pd.concat(frames)
 result = result[pd.notnull(result['Task'])]
+result.reset_index(inplace=True, drop=True)
+df1 = result
+
+df1 = df1.dropna(subset=['Task', 'Start'])
+df1.reset_index(inplace=True, drop=True)
 
 fig = ff.create_gantt(df1, group_tasks=True, colors=colors, index_col='Complete', reverse_colors=True,
                       show_colorbar=True)
