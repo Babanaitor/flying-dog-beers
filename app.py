@@ -70,7 +70,7 @@ for j in range(map_df['lat'].count()):
             map_df.loc[i, 'lat'] = map_df.loc[i, 'lat']
 
 fig1 = px.scatter_mapbox(map_df, lat="lat", lon="lon", hover_name="names", hover_data=["country", "job"],
-                         color_discrete_sequence=["fuchsia"], zoom=3, height=700, )
+                         color_discrete_sequence=["fuchsia"], zoom=2, height=600, )
 fig1.update_layout(mapbox_style="carto-positron")
 fig1.update_layout(margin={"r": 20, "t": 20, "l": 20, "b": 20})
 
