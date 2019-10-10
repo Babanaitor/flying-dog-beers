@@ -42,15 +42,13 @@ df2['Finish'] = df['Finish date']
 df2['Complete'] = df['Customer']
 df2['text'] = df['Job']
 
-
 frames = [df1, df2]
-
 result = pd.concat(frames)
-result = result[pd.notnull(result['Task'])]
+# result = result[pd.notnull(result['Task'])]
+result = result[result.Task != 'na']
 result.reset_index(inplace=True, drop=True)
 df1 = result
-
-df1 = df1.dropna(subset=['Start'])
+# df1 = df1.dropna(subset=['Start'])
 df1.reset_index(inplace=True, drop=True)
 df1.dropna(subset=['Start'], inplace=True)
 print(df1)
