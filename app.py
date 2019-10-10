@@ -50,9 +50,9 @@ result = result[pd.notnull(result['Task'])]
 result.reset_index(inplace=True, drop=True)
 df1 = result
 
-df1 = df1.dropna(subset=['Task', 'Start'])
+df1 = df1.dropna(subset=['Start'])
 df1.reset_index(inplace=True, drop=True)
-df1.dropna(subset=['Task', 'Start'], inplace=True)
+df1.dropna(subset=['Start'], inplace=True)
 print(df1)
 print(result)
 
