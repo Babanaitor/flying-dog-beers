@@ -12,10 +12,12 @@ import os
 import xlrd
 from dash.dependencies import Input, Output, State
 
-colors = ['rgb(255, 0, 0)', 'rgb(0, 255, 0)', 'rgb(0, 0, 255)', 'rgb(139,0,0)', 'rgb(0,191,255)',
-          'rgb(0,0,128)', 'rgb(138,43,226)', 'rgb(34,139,34)', 'rgb(0,128,0)', 'rgb(0,255,127)',
-          'rgb(107,142,35)', 'rgb(128,128,0)', 'rgb(255,215,0)', 'rgb(255,140,0)', 'rgb(255,0,255)',
-          'rgb(210, 19, 180)']
+# colors = ['rgb(255, 0, 0)', 'rgb(0, 255, 0)', 'rgb(0, 0, 255)', 'rgb(139,0,0)', 'rgb(0,191,255)',
+#           'rgb(0,0,128)', 'rgb(138,43,226)', 'rgb(34,139,34)', 'rgb(0,128,0)', 'rgb(0,255,127)',
+#           'rgb(107,142,35)', 'rgb(128,128,0)', 'rgb(255,215,0)', 'rgb(255,140,0)', 'rgb(255,0,255)',
+#           'rgb(210, 19, 180)']
+colors = ['#7CFC00', '#32CD32', '#228B22', '#008000', '#006400', '#ADFF2F', '#9ACD32', '#808000', '#556B2F',
+          '#6B8E23', '#7FFF00', '#26A122', '#10900C', '#12AF0D', '#18CD12']
 
 # app = dash.Dash(__name__, external_stylesheets=['https://codepen.io/chriddyp/pen/bWLwgP.css'])
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
