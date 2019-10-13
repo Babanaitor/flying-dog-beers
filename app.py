@@ -59,9 +59,20 @@ print(result)
 fig = ff.create_gantt(df1, group_tasks=True, colors=colors, index_col='Complete', reverse_colors=True,
                       show_colorbar=True)
 map_df = pd.DataFrame()
-map_df['names'] = df['FSS1 assigned'] + '     ' + df['FSS2 assigned']
+map_df['names'] = df['FSS1 assigned']
 map_df['country'] = df['Country']
 map_df['job'] = df['Job']
+map_df2 = pd.DataFrame()
+map_df2['names'] = df['FSS2 assigned']
+map_df2['country'] = df['Country']
+map_df2['job'] = df['Job']
+frames2 = [map_df, map_df2]
+result2 = pd.concat(frames2)
+result2 = result2[result2.names != 'na']
+result2.reset_index(inplace=True, drop=True)
+map_df = result2
+map_df.reset_index(inplace=True, drop=True)
+
 conditions1 = [
     (map_df['country'] == 'Egypt'),
     (map_df['country'] == 'Pakistan'),
