@@ -74,22 +74,24 @@ map_df = result2
 map_df.reset_index(inplace=True, drop=True)
 
 conditions1 = [
-    (map_df['country'] == 'Egypt'),
-    (map_df['country'] == 'Pakistan'),
-    (map_df['country'] == 'Libya'),
-    (map_df['country'] == 'Kurdistan'),
-    (map_df['country'] == 'Tunisia')
+          (map_df['country'] == 'Egypt'),
+          (map_df['country'] == 'Pakistan'),
+          (map_df['country'] == 'Libya'),
+          (map_df['country'] == 'Kurdistan'),
+          (map_df['country'] == 'Tunisia'),
+          (map_df['country'] == 'Egypt, Cairo')
 ]
-choices1 = [26.8, 30.38, 26.33, 36.41, 33.88]
+choices1 = [26.8, 30.38, 26.33, 36.41, 33.88, 30.06]
 map_df['lat'] = np.select(conditions1, choices1, default=0)
 conditions2 = [
-    (map_df['country'] == 'Egypt'),
-    (map_df['country'] == 'Pakistan'),
-    (map_df['country'] == 'Libya'),
-    (map_df['country'] == 'Kurdistan'),
-    (map_df['country'] == 'Tunisia')
+          (map_df['country'] == 'Egypt'),
+          (map_df['country'] == 'Pakistan'),
+          (map_df['country'] == 'Libya'),
+          (map_df['country'] == 'Kurdistan'),
+          (map_df['country'] == 'Tunisia'),
+          (map_df['country'] == 'Egypt, Cairo')
 ]
-choices2 = [30.8, 69.34, 17.22, 44.38, 9.53]
+choices2 = [30.8, 69.34, 17.22, 44.38, 9.53, 31.25]
 map_df['lon'] = np.select(conditions2, choices2, default=0)
 
 map_df['BOOLa'] = map_df['lat'].duplicated(keep='first')
